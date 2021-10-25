@@ -1,4 +1,5 @@
 **Note:** For the screenshots, you can store all of your answer images in the `answer-img` directory.
+![Cat Image](./answer-img/cat.gif)
 
 ## Verify the monitoring installation
 
