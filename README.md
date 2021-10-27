@@ -7,4 +7,7 @@ The  **Exercise_Starter_Files** directory has all of the files you'll need for t
 The **Project_Starter_Files** directory has the files you'll need for the project at the end of the course.
 
 # Accessing Graphana with port-forward command
-# kubectl -n monitoring port-forward svc/prom-grafana --address 0.0.0.0 30000:3000
+kubectl -n monitoring port-forward svc/prom-grafana --address 0.0.0.0 30000:3000
+
+# Jaeger Datasource url
+simplest-query.observability.svc.cluster.local:16686
