@@ -12,8 +12,14 @@
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
 
 ![Prometheus Datasources](./answer-img/prometheus_sources.gif)
+![Jaeger Datasource](./answer-img/jaeger_source.jpg)
+![Prometheus Datasource](./answer-img/prometheus_source.jpg)
+
 ## Create a Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
+
+![Test Dashboard](./answer-img/test_dashboard.gif)
+![Test Dashboard](./answer-img/test_dashboard.jpg)
 
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.

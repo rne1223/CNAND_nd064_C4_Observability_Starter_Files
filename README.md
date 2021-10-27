@@ -11,3 +11,6 @@ kubectl -n monitoring port-forward svc/prom-grafana --address 0.0.0.0 30000:3000
 
 # Jaeger Datasource url
 simplest-query.observability.svc.cluster.local:16686
+
+# Accessing Jaeger online
+kubectl port-forward -n observability  service/simplest-query --address 0.0.0.0 30001:16686
