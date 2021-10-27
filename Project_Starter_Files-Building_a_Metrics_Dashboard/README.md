@@ -24,6 +24,8 @@
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
+- SLIs (Service Level Indicators) are metrics such as request latency, batch throughput etc that are tracked overtime to determine a service's health. Usually, there is a percentage and time factor to determine the intervention threshold for an SLI. For instance, if the ratio of response/request for the past 10 minute is lower than 99% then an intervenation needs to happen. 
+
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
 
