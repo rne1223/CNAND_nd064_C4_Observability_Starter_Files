@@ -32,9 +32,9 @@
 - **Latency** is the ratio of responses that are loded within a certain time frame, usually in less than 100 ms. This measurement help determine errors when requests aren't responded in a timely manner and affects the user.
 - **Availability** is the ratio of response per request that are successful. This measurement could help determine a service outage. 
 - **Error rate** is the ratio of 400s, 500s responses. Similar to availability this measurement can help determine a service outage.
-- **Throughput** (Traffic)
-- **Response time** (Latency)
-- **Durability** might be view as a variant on correctness
+- **Throughput**  is the ratio of how many requests can the service handle. This measurement will alert us if there is a degredation on the system overtime. 
+- **Response time** measures how long does it take for the system to return a response. Similar to latency, but this keeps track of the average response time over a period. This measure can help detect degredation on the service. 
+- **Durability** measures how long storage systems suppose to retain certain data. 
 
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
