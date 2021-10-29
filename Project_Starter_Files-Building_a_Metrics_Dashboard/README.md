@@ -24,10 +24,17 @@
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
-- SLIs (Service Level Indicators) are metrics such as request latency, batch throughput etc that are tracked overtime to determine a service's health. Usually, there is a percentage and time factor to determine the intervention threshold for an SLI. For instance, if the ratio of response/request for the past 10 minute is lower than 99% then an intervenation needs to happen. 
+- SLIs (Service Level Indicators) are metrics tracked overtime to determine the perfomance of the service. Usually, there is a percentage and time factor to determine the intervention threshold for an SLI. For instance, if the ratio of response/request for the past 10 minute is lower than 99% then an intervenation needs to take place.
 
-## Creating SLI metrics.
+## Creating SLI metrics
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
+
+- **Latency** is the ratio of responses that are loded within a certain time frame, usually in less than 100 ms. This measurement help determine errors when requests aren't responded in a timely manner and affects the user.
+- **Availability** is the ratio of response per request that are successful. This measurement could help determine a service outage. 
+- **Error rate** is the ratio of 400s, 500s responses. Similar to availability this measurement can help determine a service outage.
+- **Throughput** (Traffic)
+- **Response time** (Latency)
+- **Durability** might be view as a variant on correctness
 
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
