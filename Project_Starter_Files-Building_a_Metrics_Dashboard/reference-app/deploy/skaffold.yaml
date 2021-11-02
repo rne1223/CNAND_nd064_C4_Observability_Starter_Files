@@ -1,0 +1,26 @@
+apiVersion: skaffold/v2beta24
+kind: Config
+metadata:
+  name: deploy
+build:
+  artifacts:
+  - image: backend
+    context: backend
+    docker:
+      dockerfile: Dockerfile
+  - image: frontend
+    context: frontend
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - backend/deployment.yaml
+    - frontend/deployment.yaml
+portForward:
+- resourceType: service
+  resourceName: backend
+  port: 30006
+- resourceType: service
+  resourceName: frontend
+  port: 30007

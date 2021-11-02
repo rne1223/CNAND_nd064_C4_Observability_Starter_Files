@@ -1,0 +1,10 @@
+apiVersion: skaffold/v2beta24
+kind: Config
+metadata:
+  name: app
+deploy:
+  kubectl:
+    manifests:
+    - backend.yaml
+    - frontend.yaml
+    - trial.yaml
