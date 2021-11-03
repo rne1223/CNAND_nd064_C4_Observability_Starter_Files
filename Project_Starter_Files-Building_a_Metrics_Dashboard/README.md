@@ -39,8 +39,14 @@
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services. We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
+![Uptime](./answer-img/Services-Uptime.gif)
+![Uptime](./answer-img/Services-Uptime.jpg)
+
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here.
+
+![Uptime](./answer-img/Flask-trace.gif)
+![Uptime](./answer-img/Flask-traces.jpg)
 
 ## Jaeger in Dashboards
 *TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.

@@ -2,14 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: backend
-  namespace: app
+  namespace: observability
   labels:
     app: backend
 spec:
   selector:
     app: backend
   ports:
-  - port: 8080 
+  - name: backend
+    port: 8080 
     targetPort: 8080
     nodePort: 30006
     protocol: TCP
@@ -19,22 +20,49 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: app
+  namespace: observability
   labels:
     app: backend
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true" 
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: backend
+      release: prom
   template:
     metadata:
       labels:
         app: backend
+        release: prom
     spec:
       containers:
       - name: backend
         image: backend
         ports:
           - containerPort: 8080
-
+        env:
+        - name: JAEGER_HOST
+          value: "simplest-query.observability.svc.cluster.local:16686"
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: backend-exporter
+  namespace: monitoring 
+  labels:
+    app: backend
+    release: prom 
+spec:
+  endpoints:
+  - port: backend
+    path: /metrics 
+    interval: 15s
+    scrapeTimeout: 10s
+  namespaceSelector:
+    matchNames:
+    - default 
+  selector:
+    matchLabels:
+      app: backend

@@ -8,19 +8,19 @@ build:
     context: backend
     docker:
       dockerfile: Dockerfile
-  - image: frontend
-    context: frontend
-    docker:
-      dockerfile: Dockerfile
+  # - image: frontend
+  #   context: frontend
+  #   docker:
+  #     dockerfile: Dockerfile
+  # - image: trail
+  #   context: trial
+  #   docker:
+  #     dockerfile: Dockerfile
 deploy:
   kubectl:
     manifests:
-    - backend/deployment.yaml
-    - frontend/deployment.yaml
-portForward:
-- resourceType: service
-  resourceName: backend
-  port: 30006
-- resourceType: service
-  resourceName: frontend
-  port: 30007
+    - manifests/backend_deployment.yaml
+    # - manifests/frontend_deployment.yaml
+    # - manifests/trail_deployment.yaml
+    # - manifests/mongo_db.yaml
+    # - manifests/service-monitors/mongodb-exporter.yaml
