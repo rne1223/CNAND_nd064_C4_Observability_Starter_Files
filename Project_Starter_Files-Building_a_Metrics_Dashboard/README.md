@@ -45,35 +45,62 @@
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here.
 
-![Uptime](./answer-img/Flask-trace.gif)
-![Uptime](./answer-img/Flask-traces.jpg)
+![Flask trace](./answer-img/Flask-trace.gif)
+![Flask Trace](./answer-img/Flask-traces.jpg)
 
 ## Jaeger in Dashboards
 *TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.
+![Grafana Trace](./answer-img/Prometheus-trace.gif)
+![Grafana Trace](./answer-img/Prometheus-trace.jpg)
 
 ## Report Error
 *TODO:* Using the template below, write a trouble ticket for the developers, to explain the errors that you are seeing (400, 500, latency) and to let them know the file that is causing the issue.
 
 TROUBLE TICKET
 
-Name:
+Name: Homepage can't be reach
 
-Date:
+Date: 10/19/2021
 
-Subject:
+Subject: FrontEnd-service not reachable 
 
-Affected Area:
+Affected Area: FrontEnd-service & Ingress
 
-Severity:
+Severity: ERROR
 
-Description:
+Description: It seems that FrontEnd-service has change it's port scheme and therefore Ingress is not able to reach service.
 
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
 
+- Uptime
+- Latency
+- Error rate
+
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 
+- Uptime
+    - BackEnd-service Uptime
+    - FrontEnd-service Uptime
+- Latency
+    - Avg time of responses
+- Error rate
+    - Rate of failed request per sec
+
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
+
+- **TOP LEFT**: Tracks average response time for all services, uptime of the backend-service and the amount of requests that the backend received.
+
+- **TOP MIDDLE**: Chart to view the history of the services
+
+- **TOP RIGHT**: Tracks error rate of all services, uptime of the frontend-service and the amount of requests that the frontend received.
+
+- **BOTTOM LEFT**: Chart to view the error responses from the backend
+
+- **RIGHT LEFT**: Chart to view the error responses from the frontend 
+
+![Final Chart](./answer-img/final_chart.gif)
+![Final Chart](./answer-img/final_chart.jpg)
