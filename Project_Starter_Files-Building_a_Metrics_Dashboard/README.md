@@ -77,30 +77,41 @@ Description: It seems that FrontEnd-service has change it's port scheme and ther
 - Uptime
 - Latency
 - Error rate
+- Resouce Usage
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 
 - Uptime
-    - BackEnd-service Uptime
-    - FrontEnd-service Uptime
+    - BackEnd-service Up/Down
+    - FrontEnd-service Up/Down
+    - Kubernetes Uptime 
 - Latency
     - Avg time of responses
+    - Number of successful request second
 - Error rate
     - Rate of failed request per sec
+    - Error codes for all services 500s & 400s
+- Resource Usage
+    - Used memory
+    - CPU Usage 
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 
 - **TOP LEFT**: Tracks average response time for all services, uptime of the backend-service and the amount of requests that the backend received.
 
-- **TOP MIDDLE**: Chart to view the history of the services
+- **TOP MIDDLE**: Instance uptime, chart to view the history of the services
 
 - **TOP RIGHT**: Tracks error rate of all services, uptime of the frontend-service and the amount of requests that the frontend received.
 
-- **BOTTOM LEFT**: Chart to view the error responses from the backend
+- **MIDDLE LEFT**: Graph to view the error responses from the backend
 
-- **RIGHT LEFT**: Chart to view the error responses from the frontend 
+- **MIDDLE RIGHT**: Graph to view the error responses from the frontend 
+ 
+- **BOTTOM LEFT**: Graph to view memory usage
 
-![Final Chart](./answer-img/final_chart.gif)
-![Final Chart](./answer-img/final_chart.jpg)
+- **BOTTOM RIGHT**: Graph to view CPU usage
+
+![Final Chart](./answer-img/final_chart2.gif)
+![Final Chart](./answer-img/final_chart2.jpg)
